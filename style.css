@@ -70,9 +70,6 @@ main {
     background-repeat: no-repeat;
     background-position: center;
 }
-.icons:active{
-    background-image: url(assets/images/icon-minus.svg);
-}
 #title{
     display: flex;
     flex-direction: row;
