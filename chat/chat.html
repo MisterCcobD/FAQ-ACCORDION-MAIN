@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Image and Display Element</title>
+  <style>
+    /* Some basic styling for demonstration purposes */
+    #myDiv {
+      width: 300px;
+      height: 200px;
+      background-size: cover;
+      margin: 20px;
+    }
+
+    #hiddenElement {
+      display: none; /* Initially hidden */
+    }
+  </style>
+</head>
+<body>
+    <button onclick="changeBackgroundAndDisplay()">button</button>
+
+  <!-- The element to change the background image -->
+  <div id="myDiv"></div>
+
+  <!-- Another element to display after image change -->
+  <div id="hiddenElement">
+    <p>This is the hidden element.</p>
+  </div>
+
+  <!-- Include your JavaScript at the end to ensure the DOM is fully loaded -->
+  <script>
+    // Function to change background image and display the hidden element
+    function changeBackgroundAndDisplay() {
+      // Get the element by ID
+      var myDiv = document.getElementById("myDiv");
+      var hiddenElement = document.getElementById("hiddenElement");
+
+      // Change background image
+      myDiv.style.backgroundImage = "url('new-image.jpg')";
+
+      // Display the hidden element
+      hiddenElement.style.display = "block";
+    }
+
+    // Call the function when needed, for example, when a button is clicked
+    // You can call this function based on your specific use case or event trigger
+    changeBackgroundAndDisplay();
+  </script>
+
+</body>
+</html>
