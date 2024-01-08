@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="style2.css">
-    <!-- <script src="utilities.js"></script> -->
+    <script src="utilities.js"></script>
 
     <title>Frontend Mentor | FAQ accordion</title>
 
@@ -19,64 +19,97 @@
     <main>
 
         <div class="questions">
-            <!-- <img class="floatLeft" src="/assets/images/icon-star.svg" alt=""> -->
-            <h1>FAQs</h1>
-            <div class="floatRight" onclick="changeImage()"></div>
-            <h2>What is Frontend Mentor, and how will it help me?</h2>
+            <div id="title">
+                <img src="assets/images/icon-star.svg" class="floatLeft" alt="">
+                <h1>FAQs</h1>
+            </div>
+            <div class="qContainer">
+                <a href="#question1">
+                    What is Frontend Mentor, and how will it help me?
+                </a>
+                <a href="#question1" class="icons accordion">
+                </a>
+            </div>
 
-            <p class="answers">Frontend Mentor offers realistic coding challenges to help developers improve their
+            <p id="question1" class="panel">Frontend Mentor offers realistic coding challenges to help developers improve their
                 frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
                 all levels and ideal for portfolio building.
             </p>
         </div>
         <div class="questions">
-            <div class="floatRight" onclick="changeImage()"></div>
-            <h2>Is Frontend Mentor free?</h2>
+            <div class="qContainer">
+                <a href="#question2">Is Frontend Mentor free?
+                </a>
+                <a href="#question2">
+                    <a href="#question2" class="icons">
+                    </a>
+            </div>
 
-            <p class="answers">Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+            <p id="question2">Yes, Frontend Mentor offers both free and premium coding challenges, with the free
                 option providing access to a range of projects suitable for all skill levels.
             </p>
         </div>
         <div class="questions">
-            <div class="floatRight" onclick="changeImage()"></div>
-            <h2>Can I use Frontend Mentor projects in my portfolio?</h2>
+            <a href="#question3">
+                <div class="qContainer">
+                    Can I use Frontend Mentor projects in my portfolio?
+            </a>
+            <a href="#question3">
+                <a href="#question3" class="icons">
+                </a>
+        </div>
 
-            <p class="answers">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-                way to showcase your skills to potential employers!
-            </p>
+        <p id="question3">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+            way to showcase your skills to potential employers!
+        </p>
         </div>
         <div class="questions">
-            <div class="floatRight" onclick="changeImage()" onclick="toggleAnswers()"></div>
-            <h2>How can I get help if I'm stuck on a Frontend Mentor challenge?</h2>
+            <div class="qContainer">
+                <a href="#question4">
+                    How can I get help if I'm stuck on a Frontend Mentor challenge?
+                </a>
+                <a href="#question4">
+                    <a href="#question4" class="icons">
+                    </a>
+            </div>
 
-            <p class="answers">The best place to get help is inside Frontend Mentor's Discord community. There's a help
+            <p id="question4">The best place to get help is inside Frontend Mentor's Discord community. There's a help
                 channel where you can ask questions and seek support from other community members.
             </p>
         </div>
-    </main>
-    <script>    // Get all elements with the class "floatRight"
-        var floatRightElements = document.querySelectorAll('.floatRight');
-    
-        // Function to toggle background image for each element
-        function toggleImage(element) {
-          // Check the current background image and toggle it
-          if (element.style.backgroundImage.includes('icon-plus.svg')) {
-            element.style.backgroundImage = "url('/assets/images/icon-minus.svg')";
-          } else {
-            element.style.backgroundImage = "url('/assets/images/icon-plus.svg')";
-          }
-        }
+        <script>
+            var floatRightElements = document.querySelectorAll('.icons');
 
-        // Use forEach to attach click event listeners to each element
-        floatRightElements.forEach(function(element) {
-          element.addEventListener('click', function() {
-            // Call the toggleImage function with the clicked element
-            toggleImage(element);
-          });
-        });
-        
-        
-    
+            function toggleImage(element) {
+                if (element.style.backgroundImage.includes('icon-plus.svg')) {
+                    element.style.backgroundImage = "url('assets/images/icon-minus.svg')";
+                } else {
+                    element.style.backgroundImage = "url('assets/images/icon-plus.svg')";
+                }
+            }
+
+            floatRightElements.forEach(function (element) {
+                element.addEventListener('click', function () {
+                    toggleImage(element);
+                });
+            });
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.parentElement.getElementsByClassName("panel");
+                    var j;
+                    for (j = 0; j < panel.length; j++) {
+                        if (panel[j].style.maxHeight) {
+                            panel[j].style.maxHeight = null;
+                        } else {
+                            panel[j].style.maxHeight = panel[j].scrollHeight + "px";
+                        }
+                    }
+                });
+            }
         </script>
 </body>
 
