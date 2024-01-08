@@ -6,11 +6,11 @@
 }
 @font-face {
   font-family: workSansItalic;
-  src: url(/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
+  src: url(assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
 }
 @font-face {
   font-family: workSansVariable;
-  src: url(/assets/fonts/WorkSans-VariableFont_wght.ttf);
+  src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
 }
 * {
   font-family: workSansVariable;
@@ -61,18 +61,17 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    /* gap: 1em; */
 }
 .icons{
     width: 64px;
     height: 64px;
     flex-shrink: 0;
-    background-image: url(/assets/images/icon-plus.svg);
+    background-image: url(assets/images/icon-plus.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 .icons:active{
-    background-image: url(/assets/images/icon-minus.svg);
+    background-image: url(assets/images/icon-minus.svg);
 }
 #title{
     display: flex;
@@ -114,11 +113,10 @@ main {
 @media screen and (min-width:720px) and (orientation:landscape) {
     main{
         width:30vw;
-        /* min-height: 75vh; */
         bottom: 10em;
     }
     #top{
-        background-image: url(/assets/images/background-pattern-desktop.svg);
+        background-image: url(assets/images/background-pattern-desktop.svg);
         margin: 0;
         padding: 0;
         width: 100%;
